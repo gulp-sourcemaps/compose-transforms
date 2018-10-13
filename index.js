@@ -4,7 +4,9 @@ function compose() {
   var args = [].slice.call(arguments);
 
   args.forEach(function(s, i) {
-    if (i >= args.length - 1) return;
+    if (i >= args.length - 1) {
+      return;
+    }
     var sNext = args[i + 1];
     s.pipe(sNext);
     s.pipe = function(dest) {
